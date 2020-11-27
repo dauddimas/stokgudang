@@ -122,6 +122,14 @@
 			background-color: #AA622F;
 			color: white;
 		}
+		.btn-modal {
+			color: white;
+			background-color: #965324;
+		}
+		.btn-modal:hover {
+			background-color: #AA622F;
+			color: white;
+		}
 	</style>
 </head>
 
@@ -226,7 +234,7 @@
 
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
-                <button class="btn btn-info">Simpan perubahan</button>
+                <button class="btn btn-modal">Simpan perubahan</button>
             </div>
         </form>
         </div>
@@ -260,7 +268,7 @@
 
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
-                <button class="btn btn-info">Hapus</button>
+                <button class="btn btn-modal">Hapus</button>
             </div>
         </form>
         </div>
