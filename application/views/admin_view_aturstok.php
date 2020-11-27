@@ -240,7 +240,7 @@
         <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-            <h3 class="modal-title">Jumlah Barang Masuk</h3>
+            <h3 class="modal-title">Jumlah Barang Keluar</h3>
         </div>
         <form class="form-horizontal" method="post" action="<?php echo site_url('Admin/kurangi_stok_barang');?>">
             <div class="modal-body">
@@ -255,7 +255,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-3">Jumlah Barang yang Masuk</label>
+                    <label class="control-label col-xs-3">Jumlah Barang yang Keluar</label>
                     <div class="col-xs-8">
                         <input name="jumlah_keluar" class="form-control" type="text" placeholder="Masukkan jumlah barang yang keluar">
                     </div>
