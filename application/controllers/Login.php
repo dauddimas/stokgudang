@@ -20,9 +20,11 @@ class Login extends CI_Controller {
 			$data = $result->row_array();
 			$username = $data['username'];
 			$nama_pegawai = $data['nama_pegawai'];
+			$ID_gudang = $data['ID_gudang'];
 			$sesdata = array(
 				'username' => $username,
 				'nama_pegawai' => $nama_pegawai,
+				'ID_gudang' => $ID_gudang,
 				'logged_in'  => TRUE
 			);
 			$this->session->set_userdata($sesdata);

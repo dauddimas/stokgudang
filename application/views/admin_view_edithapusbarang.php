@@ -145,6 +145,7 @@
 	            <a href="<?php echo site_url('Admin/view_aturstokbarang');?>" class="btn" role="button"><i class="material-icons" style="font-size:24px; transform: translateY(4px); margin-right: 10px;">assignment</i>Atur Stok Barang</a>
 	            <a href="<?php echo site_url('Admin/view_tambahbarang');?>" class="btn" role="button"><i class="material-icons" style="font-size:24px; transform: translateY(4px); margin-right: 10px;">add_circle_outline</i>Tambah Data Barang</a>
 	            <a href="<?php echo site_url('Admin/view_edithapusbarang');?>" class="btn" id="btn-active" role="button"><i class="material-icons" style="font-size:24px; transform: translateY(4px); margin-right: 10px;">find_replace</i>Ubah/Hapus Data Barang</a>
+	            <a href="<?php echo site_url('Admin/view_daftarpegawai');?>" class="btn" role="button"><i class="material-icons" style="font-size:24px; transform: translateY(4px); margin-right: 10px;">supervisor_account</i>Daftar Pegawai</a>
         	</div>
 		</div>
 		<div class="tabelstok">

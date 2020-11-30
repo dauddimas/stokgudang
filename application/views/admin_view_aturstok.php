@@ -145,6 +145,7 @@
 	            <a href="<?php echo site_url('Admin/view_aturstokbarang');?>" class="btn" id="btn-active" role="button"><i class="material-icons" style="font-size:24px; transform: translateY(4px); margin-right: 10px;">assignment</i>Atur Stok Barang</a>
 	            <a href="<?php echo site_url('Admin/view_tambahbarang');?>" class="btn" role="button"><i class="material-icons" style="font-size:24px; transform: translateY(4px); margin-right: 10px;">add_circle_outline</i>Tambah Data Barang</a>
 	            <a href="<?php echo site_url('Admin/view_edithapusbarang');?>" class="btn" role="button"><i class="material-icons" style="font-size:24px; transform: translateY(4px); margin-right: 10px;">find_replace</i>Ubah/Hapus Data Barang</a>
+	            <a href="<?php echo site_url('Admin/view_daftarpegawai');?>" class="btn" role="button"><i class="material-icons" style="font-size:24px; transform: translateY(4px); margin-right: 10px;">supervisor_account</i>Daftar Pegawai</a>
         	</div>
 		</div>
 		<div class="tabelstok">
@@ -158,6 +159,7 @@
 						<th>Jenis Barang</th>
 						<th>Harga Barang</th>
 						<th>Stok</th>
+						<th>Lokasi</th>
 						<th>Jumlah Masuk</th>
 						<th>Jumlah Keluar</th>
 					</tr>
@@ -165,12 +167,13 @@
 				<tbody>
 					<?php 
 	                    $no = 1;
-	    				foreach($data->result_array() as $barang):
-	    					$ID_barang=$barang['ID_barang'];
-	    					$nama_barang=$barang['nama_barang'];
-	    					$jenis_barang=$barang['jenis_barang'];
-	    					$harga_barang="Rp " . number_format($barang['harga_barang'],2,',','.');
-	    					$stok_barang=$barang['stok_barang'];
+	    				foreach($data->result_array() as $tabeljoinbarang):
+	    					$ID_barang=$tabeljoinbarang['ID_barang'];
+	    					$nama_barang=$tabeljoinbarang['nama_barang'];
+	    					$jenis_barang=$tabeljoinbarang['jenis_barang'];
+	    					$harga_barang="Rp " . number_format($tabeljoinbarang['harga_barang'],2,',','.');
+	    					$stok_barang=$tabeljoinbarang['stok_barang'];
+	    					$nama_gudang=$tabeljoinbarang['nama_gudang'];
 	    			?>
 	    			<tr>
 	    				<td><?php echo $no++;?></td>
@@ -179,6 +182,7 @@
 	    				<td><?php echo $jenis_barang;?></td>
 	    				<td><?php echo $harga_barang;?></td>
 	    				<td><?php echo $stok_barang;?></td>
+	    				<td><?php echo $nama_gudang;?></td>
 	    				<td>
                             <a class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal_jumlah_masuk<?php echo $ID_barang;?>"><span class="glyphicon glyphicon-plus" style="margin-right: 4px;"></span>Tambahkan</a>
                         </td>

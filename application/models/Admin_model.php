@@ -8,8 +8,8 @@ class Admin_model extends CI_Model {
 		return $hasil;
 	}
 
-	function tambah_barang($nama_barang,$jenis_barang,$harga_barang,$stok_barang){
-		$hasil=$this->db->query("INSERT INTO barang (nama_barang,jenis_barang,harga_barang,stok_barang) VALUES ('$nama_barang','$jenis_barang','$harga_barang','$stok_barang')");
+	function tambah_barang($nama_barang,$jenis_barang,$harga_barang,$stok_barang,$ID_gudang){
+		$hasil=$this->db->query("INSERT INTO barang (nama_barang,jenis_barang,harga_barang,stok_barang,ID_gudang) VALUES ('$nama_barang','$jenis_barang','$harga_barang','$stok_barang','$ID_gudang')");
 		return $hasil;
 	}
 
@@ -25,6 +25,16 @@ class Admin_model extends CI_Model {
 
 	function hapus_barang($ID_barang){
 		$hasil=$this->db->query("DELETE FROM barang WHERE ID_barang='$ID_barang'");
+		return $hasil;
+	}
+
+	public function tabel_barang() {
+		$hasil=$this->db->query("SELECT barang.ID_barang, barang.nama_barang, barang.jenis_barang, barang.harga_barang, barang.stok_barang, gudang.nama_gudang FROM barang INNER JOIN gudang ON gudang.ID_gudang = barang.ID_gudang");
+		return $hasil;
+	}
+
+	public function tabel_pegawai() {
+		$hasil=$this->db->query("SELECT pegawai.ID_pegawai, pegawai.nama_pegawai, gudang.nama_gudang, gudang.alamat_gudang FROM pegawai INNER JOIN gudang ON gudang.ID_gudang = pegawai.ID_gudang");
 		return $hasil;
 	}
 }

@@ -12,8 +12,8 @@ class Admin extends CI_Controller {
 
 
 	public function index() {
-		$x['data'] = $this->Admin_model->show_barang();
-		$this->load->view('admin_view_aturstok',$x);
+		$tabeljoinbarang['data'] = $this->Admin_model->tabel_barang();
+		$this->load->view('admin_view_aturstok',$tabeljoinbarang);
 	}
 
 	public function view_aturstokbarang() {
@@ -29,12 +29,18 @@ class Admin extends CI_Controller {
 		$this->load->view('admin_view_edithapusbarang',$x);
 	}
 
+	public function view_daftarpegawai() {
+		$tabeljoinpegawai['data'] = $this->Admin_model->tabel_pegawai();
+		$this->load->view('admin_view_daftarpegawai',$tabeljoinpegawai);
+	}
+
 	function tambah_barang() {
 		$nama_barang = $this->input->post('nama_barang');
 		$jenis_barang = $this->input->post('jenis_barang');
 		$harga_barang = $this->input->post('harga_barang');
 		$stok_barang = $this->input->post('stok_barang');
-		$this->Admin_model->tambah_barang($nama_barang,$jenis_barang,$harga_barang,$stok_barang);
+		$ID_gudang = $this->input->post('ID_gudang');
+		$this->Admin_model->tambah_barang($nama_barang,$jenis_barang,$harga_barang,$stok_barang,$ID_gudang);
 		redirect('Admin');
 	}
 
